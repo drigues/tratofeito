@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libzip-dev \
     nginx \
+    nodejs \
+    npm \
     supervisor \
     && docker-php-ext-install pdo pdo_pgsql mbstring zip exif pcntl
 
@@ -24,21 +26,24 @@ WORKDIR /var/www/html
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Copy Laravel app code
+# Copy Laravel code
 COPY . .
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Set correct permissions
+# Build Vite assets
+RUN npm install && npm run build
+
+# Set permissions
 RUN chown -R www-data:www-data storage bootstrap/cache
 
-# Copy Nginx config and startup script
+# Copy Nginx config and start script
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-# Expose port Render expects
+# Expose port for Render
 EXPOSE 8080
 
 # Entrypoint

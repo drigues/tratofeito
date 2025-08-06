@@ -5,8 +5,27 @@ services:
     plan: free
     branch: main
     dockerfilePath: ./Dockerfile
+    buildFilter:
+      paths:
+        - ./*
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
+      - key: APP_KEY
+        value: base64:TyxCdDxaH+x934N6gx69vmv8PoQm8ACOGDrYA0aW8Q0=
+      - key: APP_URL
+        value: https://tratofeito.pt
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d21ivmre5dus738pn970-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: tratofeito_db
+      - key: DB_USERNAME
+        value: tratofeito_db_user
+      - key: DB_PASSWORD
+        value: lRaFkFgJYe39zA2D5RQ68PNXNFjXhb6t
