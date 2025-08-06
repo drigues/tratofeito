@@ -5,16 +5,13 @@ services:
     plan: free
     branch: main
     dockerfilePath: ./Dockerfile
-    buildFilter:
-      paths:
-        - ./*
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
       - key: APP_KEY
-        value: base64:TyxCdDxaH+x934N6gx69vmv8PoQm8ACOGDrYA0aW8Q0=
+        generateValue: true
       - key: APP_URL
         value: https://tratofeito.pt
       - key: DB_CONNECTION
