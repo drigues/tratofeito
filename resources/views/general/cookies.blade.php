@@ -1,29 +1,32 @@
+
 @extends('layouts.app')
 
-@section('title', 'Bem-vindo ao Trato Feito')
+@section('title', 'Trato Feito')
 
 @section('content')
-<section class="min-vh-100 d-flex flex-column justify-content-between">
-  <!-- Hero Section -->
-  <div class="container py-5">
-    <div class="row gy-4 align-items-center text-center text-md-start">
-      <!-- Cliente -->
-      <div class="col-md-6 border-end">
-        <h2 class="fw-bold mb-3">Precisa de um Serviço?</h2>
-        <p class="text-muted">Peça orçamentos gratuitos a profissionais verificados.</p>
-        <a href="{{ route('landing.orcamentos') }}" class="btn btn-primary btn-lg mt-3">Peça Orçamento</a>
+<section class="text-dark py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Esquerda: Texto e Formulário -->
+      <div class="col-md-6">
+        <a href="{{ route('welcome') }}"><img src="/assets/images/logo.svg" alt="Logo" class="mb-4" style="width: 180px;"></a>
+         <h1 class="display-5 fw-bold">
+          Cookies
+        </h1>
+        
+        
       </div>
 
-      <!-- Profissional -->
-      <div class="col-md-6">
-        <h2 class="fw-bold mb-3">É um Profissional?</h2>
-        <p class="text-muted">Receba pedidos de clientes e aumente a sua renda.</p>
-        <a href="{{ route('landing.projetos') }}" class="btn btn-warning btn-lg mt-3 text-dark fw-semibold">Seja Profissional</a>
-      </div>
+      <p class="text-dark mb-4">
+          Conectamos os melhores profissionais de obras e reparações a clientes de confiança em Portugal. É simples, grátis e sem intermediários.
+        </p>
+
+      
     </div>
   </div>
+</section>
 
-  <!-- Footer -->
+<!-- Footer -->
   <footer class="bg-light text-center py-4 mt-5 border-top">
     <div class="container">
       <div class="mb-3 d-flex justify-content-center gap-3">
@@ -38,5 +41,4 @@
       </div>
     </div>
   </footer>
-</section>
 @endsection
