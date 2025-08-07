@@ -9,7 +9,7 @@
     <div class="row align-items-center">
       <!-- Esquerda: Texto e Formulário -->
       <div class="col-md-6 pe-5">
-        <a href="{{ route('welcome') }}"><img src="/assets/images/logo.svg" alt="Logo" class="mb-4" style="width: 180px;"></a>
+        <a href="{{ route('welcome') }}"><img src="/assets/images/logo.svg" alt="Logo" class="mb-5" style="width: 200px;"></a>
          <h1 class="display-5 fw-bold">
           Encontre Clientes e <br>
           <span class="text-warning">Aumente a sua Renda.</span><br>
@@ -30,7 +30,7 @@
               <option>Escolher serviço</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-warning w-100 fw-semibold">Enviar meus dados</button>
+          <button type="submit" class="btn btn-warning w-100 fw-semibold">Confirmar dados</button>
         </form>
         <div class="d-flex justify-content-between mt-4 text-dark small">
           <div class="d-flex align-items-center gap-2">
