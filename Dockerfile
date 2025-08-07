@@ -26,23 +26,24 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Copiar código do Laravel
 COPY . .
 
-# Garantir que o .env existe (Render usa variáveis externas)
-RUN cp .env.example .env
+# Garante que existe .env local (mas vars reais vêm do Render em runtime)
+RUN cp .env.example .env || true
 
-# Instalar dependências do Laravel
+# Instalar dependências do Laravel (sem dev)
 RUN composer install --no-dev --optimize-autoloader
 
-# Gerar chave e caches Laravel
+# Gerar chave da aplicação (usa APP_KEY se fornecida)
 RUN php artisan key:generate
+
+# NÃO fazer config:cache em build (evita fallback p/ SQLite)
 RUN php artisan config:clear
-RUN php artisan config:cache
 RUN php artisan route:cache
 RUN php artisan view:cache
 
 # Compilar assets do Vite
 RUN npm install && npm run build
 
-# Expor porta 8080 para Render
+# Expor porta esperada pelo Render
 EXPOSE 8080
 
 # Comando de arranque
