@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row align-items-center">
       <!-- Esquerda: Texto e Formulário -->
-      <div class="col-md-6">
+      <div class="col-md-6 pe-5">
         <a href="{{ route('welcome') }}"><img src="/assets/images/logo.svg" alt="Logo" class="mb-4" style="width: 180px;"></a>
         <h1 class="display-5 fw-bold">
           Encontre os profissionais <br>
@@ -33,13 +33,13 @@
         </form>
         <div class="d-flex justify-content-between mt-4 text-dark small">
           <div class="d-flex align-items-center gap-2">
-            <img src="/assets/images/icon-1.svg" width="20"> Acesso a Clientes Verificados
+            <img src="/assets/images/verify.png" width="20"> Acesso a Clientes Verificados
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="/assets/images/icon-2.svg" width="20"> Orçamento Rápido
+            <img src="/assets/images/time.png" width="24"> Orçamento Rápido
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="/assets/images/icon-3.svg" width="20"> Apoio Exclusivo
+            <img src="/assets/images/support.png" width="22"> Apoio Exclusivo
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 <!-- Footer -->
-<footer class="bg-light text-center py-4 mt-5 border-top">
+<footer class="bg-light text-center py-4 border-top">
+  <p class="card-text text-muted small">2025 -<b>Trato Feito</b> - Encontre os profissionais que precisas!</p>
   <div class="container">
     <div class="mb-3 d-flex justify-content-center gap-3">
       <a href="{{ route('general.cookies') }}" class="text-muted small">Cookies</a>
