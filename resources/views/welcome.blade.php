@@ -3,40 +3,28 @@
 @section('title', 'Bem-vindo ao Trato Feito')
 
 @section('content')
-<section class="min-vh-100 d-flex flex-column justify-content-between">
-  <!-- Hero Section -->
-  <div class="container py-5">
-    <div class="row gy-4 align-items-center text-center text-md-start">
-      <!-- Cliente -->
-      <div class="col-md-6 border-end">
+<section class="landing-split min-vh-100 d-flex flex-column justify-content-between">
+  <div class="row g-0 min-vh-100">
+    <!-- Cliente -->
+    <div class="col-md-6 d-flex align-items-center justify-content-end box-texto cliente-bloco text-white text-end">
+      <div class="p-5" style="max-width: 420px;">
         <h2 class="fw-bold mb-3">Precisa de um Serviço?</h2>
-        <p class="text-muted">Peça orçamentos gratuitos a profissionais verificados.</p>
+        <p>Peça orçamentos gratuitos a profissionais verificados.</p>
         <a href="{{ route('landing.orcamentos') }}" class="btn btn-primary btn-lg mt-3">Peça Orçamento</a>
       </div>
+    </div>
 
-      <!-- Profissional -->
-      <div class="col-md-6">
+    <!-- Profissional -->
+    <div class="col-md-6 d-flex align-items-center justify-content-start box-texto profissional-bloco text-white text-start">
+      <div class="p-5" style="max-width: 420px;">
         <h2 class="fw-bold mb-3">É um Profissional?</h2>
-        <p class="text-muted">Receba pedidos de clientes e aumente a sua renda.</p>
+        <p>Receba pedidos de clientes e aumente a sua renda.</p>
         <a href="{{ route('landing.projetos') }}" class="btn btn-warning btn-lg mt-3 text-dark fw-semibold">Seja Profissional</a>
       </div>
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer class="bg-light text-center py-4 mt-5 border-top">
-    <div class="container">
-      <div class="mb-3 d-flex justify-content-center gap-3">
-        <a href="{{ route('general.politica') }}" class="text-muted small">Política de Privacidade</a>
-        <a href="{{ route('general.termos') }}" class="text-muted small">Termos</a>
-        <a href="{{ route('general.cookies') }}" class="text-muted small">Cookies</a>
-      </div>
-      <div class="d-flex justify-content-center gap-3">
-        <a href="#"><img src="{{ asset('assets/images/icon-1.svg') }}" width="24" alt="Facebook"></a>
-        <a href="#"><img src="{{ asset('assets/images/icon-2.svg') }}" width="24" alt="Instagram"></a>
-        <a href="#"><img src="{{ asset('assets/images/icon-3.svg') }}" width="24" alt="Twitter"></a>
-      </div>
-    </div>
-  </footer>
 </section>
+
+@include('partial.simpfooter')
+  
 @endsection
