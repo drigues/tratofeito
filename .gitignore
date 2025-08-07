@@ -1,6 +1,7 @@
 *.log
 .DS_Store
 .env
+.env.exemple
 .env.docker
 .env.backup
 .env.production
