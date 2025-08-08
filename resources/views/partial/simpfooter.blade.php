@@ -3,9 +3,9 @@
   <p class="card-text text-muted small">2025 -<b>Trato Feito</b> - Encontre os profissionais que precisas!</p>
   <div class="container">
     <div class="mb-3 d-flex justify-content-center gap-3">
-      <a href="{{ route('general.cookies') }}" class="text-muted small">Politica de Cookies</a>
-      <a href="{{ route('general.politica') }}" class="text-muted small">Política de Privacidade</a>
-       <a href="{{ route('general.termos') }}" class="text-muted small">Termos e Condições</a>
+      <a href="{{ route('general.politica-cookies') }}" class="text-muted small">Politica de Cookies</a>
+      <a href="{{ route('general.politica-privacidade') }}" class="text-muted small">Política de Privacidade</a>
+       <a href="{{ route('general.politica-termos') }}" class="text-muted small">Termos e Condições</a>
       <a href="https://www.livroreclamacoes.pt/Inicio/" class="text-muted small">Livro de Reclamações</a>
     </div>
     <div class="d-flex justify-content-center gap-3">

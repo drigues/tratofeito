@@ -81,7 +81,7 @@
         <h5 class="mt-5 fw-bold">8. Cookies</h5>
         <p>
           Utilizamos cookies para melhorar a experiência de navegação. 
-          Pode consultar a nossa <a href="{{ route('general.cookies') }}">Política de Cookies</a> para mais detalhes.
+          Pode consultar a nossa <a href="{{ route('general.politica-cookies') }}">Política de Cookies</a> para mais detalhes.
         </p>
 
         <h5 class="mt-5 fw-bold">9. Alterações a Esta Política</h5>

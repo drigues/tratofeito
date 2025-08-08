@@ -1,12 +1,52 @@
 <!doctype html>
 <html lang="pt">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ $title ?? 'Trato Feito' }}</title>
-  @vite(['resources/scss/app.scss','resources/js/app.js'])
-</head>
-<body class="bg-white text-gray-900 antialiased">
-  @yield('content')
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ $title ?? 'Trato Feito' }}</title>
+    @vite(['resources/scss/app.scss','resources/js/app.js'])
+
+    <!-- Charset & Viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title & Description -->
+    <title>TratoFeito.pt - Encontre Clientes e Profissionais em Portugal</title>
+    <meta name="description" content="No TratoFeito.pt ligamos clientes e profissionais em Portugal. Solicite orçamentos, compare e escolha o serviço ideal com rapidez e confiança.">
+
+    <!-- Keywords -->
+    <meta name="keywords" content="serviços, profissionais, Portugal, orçamentos, contratar, eletricista, canalizador, remodelações, jardinagem, serviços domésticos, serviços técnicos, reparações, obras, limpezas">
+
+    <!-- Author -->
+    <meta name="author" content="TratoFeito.pt">
+
+    <!-- Language -->
+    <meta http-equiv="Content-Language" content="pt-PT">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tratofeito.pt/">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tratofeito.pt/">
+    <meta property="og:title" content="TratoFeito.pt - Encontre Clientes e Profissionais em Portugal">
+    <meta property="og:description" content="Solicite orçamentos grátis e encontre o profissional certo para o seu projeto em qualquer ponto de Portugal.">
+    <meta property="og:image" content="https://tratofeito.pt/images/tratofeito.jpg">
+    <meta property="og:locale" content="pt_PT">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tratofeito.pt/">
+    <meta name="twitter:title" content="TratoFeito.pt - Encontre Clientes e Profissionais em Portugal">
+    <meta name="twitter:description" content="Ligue-se aos melhores profissionais em Portugal. Compare orçamentos e contrate com confiança.">
+    <meta name="twitter:image" content="https://tratofeito.pt/images/tratofeito.jpg">
+
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    @yield('content')
+  </body>
 </html>

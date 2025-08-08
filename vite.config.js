@@ -4,7 +4,7 @@ import laravel from 'laravel-vite-plugin'
 export default defineConfig({
   build: {
     outDir: 'public/build',
-    manifest: true,            // <-- keep default name: manifest.json
+    manifest: true,        // keep default manifest.json
     emptyOutDir: true,
   },
   plugins: [
