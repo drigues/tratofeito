@@ -1,61 +1,60 @@
-# ──────────────────────────────────────────────────────────────────────────────
-# 1) Base PHP image with required extensions
-# ──────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────
+# 1) PHP base with required extensions + Composer
+# ─────────────────────────────────────────────────────────────────────
 FROM php:8.3-cli AS php-base
 
-# System libs + PHP extensions you’re using
 RUN apt-get update && apt-get install -y \
     git unzip libpq-dev libzip-dev libonig-dev libxml2-dev \
  && docker-php-ext-install pdo pdo_pgsql mbstring zip exif pcntl \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
-
-# Composer (from official image)
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# 2) Node build stage (Node 20) – builds Vite assets into /app/public/build
-# ──────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────
+# 2) Node 20 stage: build Vite assets
+# ─────────────────────────────────────────────────────────────────────
 FROM node:20-alpine AS assets
-
-# Needed by some tooling (optional but common)
-RUN apk add --no-cache python3 make g++ git
-
 WORKDIR /app
 
-# Copy only what the Vite build needs to leverage Docker layer caching
+# (optional) some packages need build tools
+RUN apk add --no-cache python3 make g++ git
+
+# Copy only what’s needed for a cached install
 COPY package*.json ./
 COPY vite.config.* ./
-COPY postcss.config.* ./          
+# Remove these lines if you truly don't have them
+# COPY postcss.config.* ./
+# COPY tailwind.config.* ./
+
 COPY resources ./resources
-# If you reference static files via /assets/... copy public as well
 COPY public ./public
 
-ENV NODE_ENV=production
-RUN npm ci
+# IMPORTANT: install devDependencies so vite exists
+# (either do not set NODE_ENV=production or force include dev)
+# ENV NODE_ENV=development
+RUN npm ci --include=dev
 RUN npm run build
-# At this point we have: /app/public/build/.vite/manifest.json and assets
+# Result: /app/public/build (with .vite/manifest.json)
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# 3) Final runtime image (PHP only) – copies code + prebuilt assets
-# ──────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────
+# 3) Final runtime image (PHP only) with prebuilt assets
+# ─────────────────────────────────────────────────────────────────────
 FROM php-base AS app
-
 WORKDIR /var/www/html
 
-# Copy the rest of the application code
+# Copy the app code
 COPY . .
 
-# Install PHP deps (no dev) and optimize autoloader
+# Install PHP deps (prod only) and optimize
 RUN composer install --no-dev --optimize-autoloader --no-interaction --no-progress
 
-# Bring in the prebuilt Vite bundle from the Node stage
+# Copy prebuilt assets from Node stage
 COPY --from=assets /app/public/build ./public/build
 
-# Laravel caches (safe: they don’t hit DB)
+# Clear + warm caches (comment route:cache if you use closure routes)
 RUN php artisan config:clear \
  && php artisan route:clear \
  && php artisan view:clear \
@@ -63,10 +62,7 @@ RUN php artisan config:clear \
  && php artisan route:cache \
  && php artisan view:cache
 
-# If you need the storage symlink in production, uncomment:
-# RUN php artisan storage:link || true
-
-# Make sure www-data can read/write storage/bootstrap
+# Ensure perms
 RUN chown -R www-data:www-data storage bootstrap/cache public
 
 EXPOSE 8080
