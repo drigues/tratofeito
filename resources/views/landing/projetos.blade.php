@@ -57,17 +57,37 @@
   <div class="container">
     <h2 class="mb-4 fw-bold">Profissionais</h2>
     <div class="row g-4">
-      @foreach(range(1,3) as $i)
+
         <div class="col-sm-6 col-md-4">
           <div class="card text-center shadow-sm">
-            <img src="/assets/images/img-2.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 80px; height: 80px;">
+            <img src="/assets/images/img-a.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 80px; height: 80px;">
             <div class="card-body">
-              <h5 class="card-title">Profissional Exemplo</h5>
+              <h5 class="card-title">Limpeza/Cleaner</h5>
               <p class="card-text text-muted small">Especialista em Estucagem</p>
             </div>
           </div>
         </div>
-      @endforeach
+
+        <div class="col-sm-6 col-md-4">
+          <div class="card text-center shadow-sm">
+            <img src="/assets/images/img-b.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 80px; height: 80px;">
+            <div class="card-body">
+              <h5 class="card-title">Construção/Remodelagem</h5>
+              <p class="card-text text-muted small">Especialista em Estucagem</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="card text-center shadow-sm">
+            <img src="/assets/images/img-c.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 80px; height: 80px;">
+            <div class="card-body">
+              <h5 class="card-title">Serviço de mesa/Catering</h5>
+              <p class="card-text text-muted small">Especialista em Estucagem</p>
+            </div>
+          </div>
+        </div>
+        
     </div>
   </div>
 </section>
