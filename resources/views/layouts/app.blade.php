@@ -16,8 +16,7 @@
 
     <title>{{ $title ?? 'Trato Feito' }}</title>
     
-    <link rel="stylesheet" href="/build/assets/app.css">
-    <script src="/build/assets/app.js" defer></script>
+    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
     <!-- Charset & Viewport -->
     <meta charset="UTF-8">
