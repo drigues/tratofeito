@@ -15,7 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ $title ?? 'Trato Feito' }}</title>
-    @vite(['resources/scss/app.scss','resources/js/app.js'])
+    
+    <link rel="stylesheet" href="/build/assets/app.css">
+    <script src="/build/assets/app.js" defer></script>
 
     <!-- Charset & Viewport -->
     <meta charset="UTF-8">
