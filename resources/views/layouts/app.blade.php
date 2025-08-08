@@ -55,8 +55,19 @@
     <meta name="twitter:description" content="Ligue-se aos melhores profissionais em Portugal. Compare orçamentos e contrate com confiança.">
     <meta name="twitter:image" content="https://tratofeito.pt/images/tratofeito.jpg">
 
+    {{-- Bootstrap (keep whatever you already use) --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {{-- Page-level styles pushed from child views (e.g., Mailchimp CSS) --}}
+    @stack('styles')
   </head>
   <body class="bg-white text-gray-900 antialiased">
     @yield('content')
+
+    {{-- Optional Bootstrap JS --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    {{-- Page-level scripts pushed from child views (e.g., Mailchimp validator) --}}
+    @stack('scripts')
   </body>
 </html>
