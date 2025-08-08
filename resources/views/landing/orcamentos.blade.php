@@ -59,30 +59,30 @@
 
         <div class="col-sm-6 col-md-4">
           <div class="card text-center shadow-sm">
-            <img src="/assets/images/img-a.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 80px; height: 80px;">
+            <img src="/assets/images/img-a.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 100px; height: 100px;">
             <div class="card-body">
-              <h5 class="card-title">Limpeza/Cleaner</h5>
-              <p class="card-text text-muted small">Especialista em Estucagem</p>
+              <h5 class="card-title">Limpeza</h5>
+              <p class="card-text text-muted small">Especialista em limpeza residencial</p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-6 col-md-4">
           <div class="card text-center shadow-sm">
-            <img src="/assets/images/img-b.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 80px; height: 80px;">
+            <img src="/assets/images/img-b.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 100px; height: 100px;">
             <div class="card-body">
-              <h5 class="card-title">Construção/Remodelagem</h5>
-              <p class="card-text text-muted small">Especialista em Estucagem</p>
+              <h5 class="card-title">Construção e Remodelagem</h5>
+              <p class="card-text text-muted small">Especialista em pladur</p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-6 col-md-4">
           <div class="card text-center shadow-sm">
-            <img src="/assets/images/img-c.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 80px; height: 80px;">
+            <img src="/assets/images/img-c.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 100px; height: 100px;">
             <div class="card-body">
-              <h5 class="card-title">Serviço de mesa/Catering</h5>
-              <p class="card-text text-muted small">Especialista em Estucagem</p>
+              <h5 class="card-title">Catering e Serviço de mesa</h5>
+              <p class="card-text text-muted small">Especialista em eventos empresarial</p>
             </div>
           </div>
         </div>
