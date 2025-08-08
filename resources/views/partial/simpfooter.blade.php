@@ -9,10 +9,10 @@
       <a href="https://www.livroreclamacoes.pt/Inicio/" class="text-muted small">Livro de Reclamações</a>
     </div>
     <div class="d-flex justify-content-center gap-3">
-      <a href="#"><img src="{{ asset('assets/images/face.png') }}" width="18" alt="Facebook"></a>
-      <a href="#"><img src="{{ asset('assets/images/insta.png') }}" width="18" alt="Instagram"></a>
-      <a href="#"><img src="{{ asset('assets/images/link.png') }}" width="18" alt="LinkedIn"></a>
-      <a href="#"><img src="{{ asset('assets/images/news.png') }}" width="18" alt="Blog"></a>
+      <a href="https://www.facebook.com/profile.php?id=61579321133824" target="_blank"><img src="{{ asset('assets/images/face.png') }}" width="18" alt="Facebook"></a>
+      <a href="https://www.instagram.com/tratofeito.pt/" target="_blank"><img src="{{ asset('assets/images/insta.png') }}" width="18" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/showcase/tratofeito-pt" target="_blank"><img src="{{ asset('assets/images/link.png') }}" width="18" alt="LinkedIn"></a>
+      <a href="#" target="_blank"><img src="{{ asset('assets/images/news.png') }}" width="18" alt="Blog"></a>
     </div>
   </div>
 </footer>

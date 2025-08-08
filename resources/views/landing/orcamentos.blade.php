@@ -57,25 +57,22 @@
                   target="_blank"
                   novalidate>
               <div id="mc_embed_signup_scroll">
-                <h2>Subscreve</h2>
-                <div class="indicates-required"><span class="asterisk">*</span> campos obrigatórios</div>
-
-                <div class="mc-field-group mb-3">
+                <div class="mc-field-group">
                   <label for="mce-FNAME">Nome</label>
                   <input type="text" name="FNAME" class="text form-control" id="mce-FNAME" value="">
                 </div>
 
-                <div class="mc-field-group mb-3">
+                <div class="mc-field-group">
                   <label for="mce-EMAIL">Endereço de email <span class="asterisk">*</span></label>
                   <input type="email" name="EMAIL" class="required email form-control" id="mce-EMAIL" value="" required>
                 </div>
 
-                <div class="mc-field-group mb-3">
+                <div class="mc-field-group">
                   <label for="mce-PHONE">Telemóvel</label>
                   <input type="text" name="PHONE" class="REQ_CSS form-control" id="mce-PHONE" value="">
                 </div>
 
-                <div class="mc-field-group mb-4">
+                <div class="mc-field-group">
                   <label for="mce-COMPANY">O que precisas?</label>
                   <input type="text" name="COMPANY" class="text form-control" id="mce-COMPANY" value="">
                 </div>
@@ -92,7 +89,7 @@
 
                 <div class="optionalParent">
                   <div class="clear foot d-flex align-items-center gap-3">
-                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary fw-semibold" value="Confirmar dados">
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary fw-semibold btn-cliente" value="Confirmar dados">
                     {{-- Mailchimp badge (optional; keep for compliance if required by your plan) --}}
                     <p class="m-0">
                       <a href="http://eepurl.com/jkS0c6" title="Mailchimp">
@@ -111,7 +108,7 @@
           </div> {{-- /#mc_embed_signup --}}
         </div>   {{-- /#mc_embed_shell --}}
 
-        <div class="d-flex justify-content-between mt-4 text-dark small">
+        <div class="d-flex justify-content-between mt-4 text-dark small pe-4">
           <div class="d-flex align-items-center gap-2">
             <img src="{{ asset('assets/images/verify.png') }}" width="20" alt=""> Acesso a Clientes Verificados
           </div>
