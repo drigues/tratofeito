@@ -1,40 +1,38 @@
 # Dockerfile
 FROM php:8.3-cli
 
-# System deps
+# ---- system deps ----
 RUN apt-get update && apt-get install -y \
-    git unzip curl ca-certificates gnupg \
-    libpq-dev libzip-dev libpng-dev libonig-dev libxml2-dev \
- && docker-php-ext-install pdo pdo_pgsql mbstring zip exif \
- && rm -rf /var/lib/apt/lists/*
+    git curl unzip libpq-dev libpng-dev libjpeg-dev libonig-dev libxml2-dev libzip-dev \
+    && docker-php-ext-install pdo pdo_pgsql mbstring zip exif pcntl
 
-# Node.js 20 (vite/laravel-vite-plugin require >=20.x)
+# ---- Node 20 LTS (vite & laravel-vite-plugin need >=20.19) ----
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
- && apt-get update && apt-get install -y nodejs \
- && node -v && npm -v
+    && apt-get install -y nodejs
 
-# Workdir
+# ---- workdir & composer ----
 WORKDIR /var/www/html
-
-# Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# App code
+# ---- app code ----
 COPY . .
 
-# Install PHP deps (no dev) and optimise autoloader
-RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+# make sure an .env exists (Render injects env vars, but artisan reads keys)
+RUN [ -f .env ] || cp .env.example .env
 
-# Build frontend once, into /public/build
-RUN npm ci && npm run build
+# ---- PHP deps & framework caches (no DB work at build time) ----
+RUN composer install --no-dev --prefer-dist --optimize-autoloader \
+ && php artisan key:generate --force || true \
+ && php artisan config:clear \
+ && php artisan route:clear \
+ && php artisan view:clear
 
-# Ensure Laravel runtime dirs exist & are writable
-RUN mkdir -p storage/framework/{cache,sessions,views} \
- && chown -R www-data:www-data storage bootstrap/cache public/build
+# ---- Vite build (this produces public/build/** and manifest.json) ----
+RUN npm ci \
+ && npm run build
 
-# Start script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# helpful: ensure public/build is readable by the web user
+RUN chown -R www-data:www-data public storage bootstrap/cache
 
 EXPOSE 8080
-CMD ["/start.sh"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
