@@ -8,7 +8,7 @@
     <!-- Cliente -->
     <div class="col-md-6 d-flex align-items-center justify-content-center box-texto cliente-bloco text-white text-center">
       <div class="p-4 box-frente" style="">
-        <h2 class="fw-bold mb-3">Tens de um serviço?</h2>
+        <h2 class="fw-bold mb-3">Tens um serviço?</h2>
         <p>Peça orçamentos gratuitos à profissionais verificados.</p>
         <a href="{{ route('landing.orcamentos') }}" class="btn btn-primary btn-lg mt-3">Peça Orçamento</a>
       </div>

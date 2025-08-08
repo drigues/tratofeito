@@ -12,69 +12,88 @@
       <div class="col-md-12">
         <h1 class="display-5 fw-bold">Política de Privacidade</h1>
         <p class="text-muted small mb-4">
-          Última atualização: 26 de Dezembro de 2024
+          Última atualização:
+          {{ \Carbon\Carbon::now()->locale('pt_PT')->translatedFormat('F \d\e Y') }}
         </p>
 
-        <p class="text-dark">
-          A Trato Feito valoriza a privacidade dos seus utilizadores e compromete-se a proteger os dados pessoais fornecidos na sua plataforma. A presente Política de Privacidade explica como recolhemos, usamos, armazenamos e protegemos esses dados.
+        <p>
+          Esta Política de Privacidade descreve como recolhemos, utilizamos e protegemos os seus dados pessoais ao utilizar esta plataforma.
+          O tratamento dos dados é feito em conformidade com o Regulamento Geral de Proteção de Dados (RGPD) e demais legislação aplicável.
         </p>
 
-        <h5 class="mt-5 fw-bold">1. Recolha de Dados</h5>
-        <p>Recolhemos dados pessoais quando se regista, submete um pedido, responde a um pedido ou interage com o nosso site. Estes dados podem incluir: nome, email, telefone, localização e outros dados necessários à prestação dos serviços.</p>
-
-        <h5 class="mt-5 fw-bold">2. Dados Técnicos e de Navegação</h5>
+        <h5 class="mt-5 fw-bold">1. Dados que Recolhemos</h5>
+        <p>
+          Podemos recolher as seguintes informações:
+        </p>
         <ul>
-          <li>Informações do dispositivo (sistema operativo, operador móvel)</li>
-          <li>Localização (via IP, GPS, Wi-Fi)</li>
-          <li>IP, navegador, sistema operativo, fuso horário</li>
-          <li>Sequência de cliques e interações com a plataforma</li>
-          <li>Cookies (armazenamento de preferências e sessões)</li>
+          <li>Dados de identificação: nome, email, telefone</li>
+          <li>Informações de localização (morada, cidade, país)</li>
+          <li>Dados técnicos: endereço IP, tipo de dispositivo, sistema operativo e navegador</li>
+          <li>Dados de navegação e interações na plataforma</li>
+          <li>Cookies e tecnologias similares</li>
         </ul>
 
-        <h5 class="mt-5 fw-bold">3. Finalidades do Tratamento</h5>
-        <p>Utilizamos os dados recolhidos para:</p>
+        <h5 class="mt-5 fw-bold">2. Finalidade da Recolha</h5>
         <ul>
-          <li>Fornecer e melhorar os nossos serviços</li>
-          <li>Comunicar com os utilizadores</li>
-          <li>Cumprir obrigações legais</li>
-          <li>Evitar fraudes e abusos</li>
-          <li>Análise estatística e melhorias de experiência</li>
+          <li>Fornecer e personalizar os serviços</li>
+          <li>Gerir registos e pedidos efetuados</li>
+          <li>Comunicar informações relevantes</li>
+          <li>Cumprir obrigações legais e regulatórias</li>
+          <li>Melhorar a experiência do utilizador e prevenir fraudes</li>
         </ul>
 
-        <h5 class="mt-5 fw-bold">4. Retenção de Dados</h5>
-        <p>Os dados são armazenados enquanto a conta estiver ativa e por um período adicional para cumprimento legal ou resolução de litígios. Posteriormente, os dados são eliminados com segurança.</p>
+        <h5 class="mt-5 fw-bold">3. Base Legal para o Tratamento</h5>
+        <p>
+          O tratamento dos dados pessoais baseia-se no consentimento do utilizador, no cumprimento de obrigações legais, 
+          na execução de um contrato ou no interesse legítimo em operar e melhorar os serviços.
+        </p>
 
-        <h5 class="mt-5 fw-bold">5. Direitos do Utilizador</h5>
-        <p>Nos termos do RGPD, o utilizador tem o direito de:</p>
+        <h5 class="mt-5 fw-bold">4. Partilha de Dados</h5>
+        <p>
+          Os dados podem ser partilhados com prestadores de serviços técnicos, parceiros estratégicos e autoridades competentes,
+          sempre de acordo com a finalidade para a qual foram recolhidos e com medidas de segurança adequadas.
+        </p>
+
+        <h5 class="mt-5 fw-bold">5. Retenção de Dados</h5>
+        <p>
+          Os dados são armazenados pelo período necessário para cumprir as finalidades da recolha ou por obrigações legais,
+          sendo posteriormente eliminados ou anonimizados de forma segura.
+        </p>
+
+        <h5 class="mt-5 fw-bold">6. Direitos do Utilizador</h5>
+        <p>
+          Nos termos do RGPD, o utilizador pode, a qualquer momento:
+        </p>
         <ul>
-          <li>Aceder aos seus dados</li>
-          <li>Corrigir ou atualizar dados</li>
+          <li>Aceder, corrigir ou atualizar os seus dados</li>
           <li>Solicitar a eliminação dos dados</li>
-          <li>Restringir ou opor-se ao seu tratamento</li>
+          <li>Restringir ou opor-se ao tratamento</li>
+          <li>Retirar o consentimento</li>
+          <li>Solicitar a portabilidade dos dados</li>
         </ul>
 
-        <h5 class="mt-5 fw-bold">6. Segurança</h5>
-        <p>Implementamos medidas técnicas e organizativas para proteger os seus dados contra acesso não autorizado, perda ou destruição. Toda a informação sensível é transmitida de forma encriptada.</p>
+        <h5 class="mt-5 fw-bold">7. Segurança</h5>
+        <p>
+          Implementamos medidas técnicas e organizativas para proteger os dados pessoais contra acesso não autorizado,
+          perda, alteração ou divulgação.
+        </p>
 
-        <h5 class="mt-5 fw-bold">7. Cookies</h5>
-        <p>Utilizamos cookies para melhorar a navegação, armazenar preferências e apresentar anúncios personalizados. Pode controlar ou bloquear cookies nas definições do seu navegador. Algumas funcionalidades podem deixar de funcionar se os cookies forem desativados.</p>
+        <h5 class="mt-5 fw-bold">8. Cookies</h5>
+        <p>
+          Utilizamos cookies para melhorar a experiência de navegação. 
+          Pode consultar a nossa <a href="{{ route('general.cookies') }}">Política de Cookies</a> para mais detalhes.
+        </p>
 
-        <h5 class="mt-5 fw-bold">8. Partilha de Dados</h5>
-        <p>Podemos partilhar dados com prestadores de serviços tecnológicos (ex: Google, Facebook, serviços de email/SMS) sempre de acordo com a finalidade da recolha e com contratos de confidencialidade. Nunca vendemos os seus dados.</p>
+        <h5 class="mt-5 fw-bold">9. Alterações a Esta Política</h5>
+        <p>
+          Podemos atualizar esta política periodicamente. Recomendamos a consulta regular desta página para se manter informado.
+        </p>
 
-        <h5 class="mt-5 fw-bold">9. Ligações a Sites Externos</h5>
-        <p>A Trato Feito pode incluir links para sites externos. Não nos responsabilizamos pelas políticas de privacidade desses sites.</p>
-
-        <h5 class="mt-5 fw-bold">10. Alterações à Política</h5>
-        <p>Reservamo-nos o direito de alterar esta política a qualquer momento. As alterações serão comunicadas nesta página.</p>
-
-        <h5 class="mt-5 fw-bold">11. Contacto</h5>
-        <p>Se tiver dúvidas ou quiser exercer os seus direitos, contacte-nos através de:</p>
-        <ul>
-          <li>Email: <a href="mailto:privacidade@tratofeito.pt">privacidade@tratofeito.pt</a></li>
-          <li>Telefone: +351 XXX XXX XXX (chamada local)</li>
-          <li>Disponível de 2ª a 6ª feira, das 9h às 18h</li>
-        </ul>
+        <h5 class="mt-5 fw-bold">10. Contacto</h5>
+        <p>
+          Para questões relacionadas com esta Política de Privacidade ou para exercer os seus direitos,
+          utilize os canais de contacto indicados na plataforma.
+        </p>
       </div>
     </div>
   </div>
