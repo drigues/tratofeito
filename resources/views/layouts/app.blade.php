@@ -16,7 +16,33 @@
 
     <title>{{ $title ?? 'Trato Feito' }}</title>
     
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    {{-- Robust assets loader: production uses manifest if present, otherwise fall back to @vite --}}
+    @php
+        $manifestPath = public_path('build/.vite/manifest.json');
+    @endphp
+
+    @if (app()->environment('production') && file_exists($manifestPath))
+        @php
+            $manifest = json_decode(file_get_contents($manifestPath), true);
+            $scssEntry = $manifest['resources/scss/app.scss'] ?? null;
+            $jsEntry   = $manifest['resources/js/app.js'] ?? null;
+            $cssFiles  = $scssEntry['css'] ?? [];
+        @endphp
+
+        {{-- CSS from SCSS entry --}}
+        @foreach ($cssFiles as $css)
+            <link rel="stylesheet" href="{{ asset('build/'.$css) }}">
+        @endforeach
+
+        {{-- JS from JS entry --}}
+        @if ($jsEntry && !empty($jsEntry['file']))
+            <script type="module" src="{{ asset('build/'.$jsEntry['file']) }}" defer></script>
+        @endif
+    @else
+        {{-- Dev / fallback: let Vite handle it --}}
+        @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    @endif
+
 
     <!-- Charset & Viewport -->
     <meta charset="UTF-8">
