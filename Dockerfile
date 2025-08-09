@@ -18,8 +18,9 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Vite build
-RUN npm ci || npm install \
- && npm run build
+RUN npm i bootstrap sass \
+ && mkdir -p public/css \
+ && npx sass --load-path=node_modules resources/scss/app.scss public/css/app.css --style=compressed --no-source-map
 
 # (optional) Laravel caches AFTER envs are injected at runtime is safer,
 # so only clear now to avoid baking wrong env into cache
