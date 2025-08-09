@@ -7,7 +7,7 @@
     </a>
 
     <!-- Botões -->
-    <div class="d-flex gap-3">
+    <div class="d-flex gap-3 botoes">
       <a href="{{ route('landing.orcamentos') }}" class="btn btn-primary btn-md">Peça Orçamento</a>
       <a href="{{ route('landing.projetos') }}" class="btn btn-warning btn-md text-dark fw-semibold">Seja Profissional</a>
     </div>

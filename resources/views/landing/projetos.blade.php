@@ -22,21 +22,21 @@
 @section('content')
 <section class="bg-body-secondary text-dark py-5">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 pe-5">
+    <div class="row align-start-center">
+      <div class="col-md-6 pe-5 mailchimp">
         <a href="{{ route('welcome') }}">
-          <img src="/assets/images/logo.svg" alt="Logo" class="mb-3" style="width: 200px;">
+          <img src="/assets/images/logo.svg" alt="Logo" class="mb-4" style="width: 200px;">
         </a>
         <h1 class="display-5 fw-bold">
           Encontre Clientes e <br>
           <span class="text-warning">Aumente a sua Renda.</span><br>
-          Junte-se à Trato Feito!
+          Junte-te à Trato Feito!
         </h1>
         <p class="text-dark mb-4">
           Conectamos os melhores profissionais de obras e reparações a clientes de confiança em Portugal. É simples, grátis e sem intermediários.
         </p>
 
-        {{-- ✅ Mailchimp embed --}}
+        {{-- Mailchimp embed --}}
         <div id="mc_embed_shell">
           <div id="mc_embed_signup">
             <form action="https://tratofeito.us5.list-manage.com/subscribe/post?u=3b1071360a93bc7c9ae8a71c1&amp;id=ac6aaff858&amp;f_id=00c389e1f0"
@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-between mt-4 text-dark small pe-4">
+        <div class="d-flex justify-content-between mt-4 text-dark small pe-4 bene">
           <div class="d-flex align-items-center gap-2">
             <img src="/assets/images/verify.png" width="20"> Acesso a Clientes Verificados
           </div>
@@ -115,6 +115,36 @@
   </div>
 </section>
 
+<section class="bg-body-light text-dark py-5">
+  <div class="container">
+    <div class="row align-items-center py-4">
+      <!-- Left -->
+      <div class="col-md-6 pe-5 mailchimp">
+          <h2 class="display-7 fw-bold">
+            Afinal, o que é a Trato Feito? 
+          </h2>
+          <p class="text-dark mb-1">
+            Muito prazer, nós somos a <b>Trato Feito</b> — uma plataforma especializada em ligar clientes a profissionais de confiança nas áreas de <b>obras, pinturas, manutenções e serviços gerais</b>.
+          </p>
+          <p class="text-dark mb-1">
+            Nascemos com um propósito claro: <b>resolver o grande problema de encontrar bons profissionais sem stress, sem riscos e sem custos.</b> Já ajudámos dezenas de clientes em Portugal a realizarem pequenas e grandes obras com segurança, qualidade e agilidade.
+          </p>
+          <p class="text-dark mb-1">
+            A nossa missão é <b>simplificar a sua vida</b>, oferecendo-lhe acesso rápido a técnicos qualificados, verificados e prontos para ajudar — seja para um pequeno reparo em casa ou uma obra maior.
+          </p>
+          <p class="text-dark mb-1">
+            Se também quer <b>poupar tempo, evitar dores de cabeça e garantir que o serviço é bem feito</b>, basta clicar no botão abaixo, deixar o seu contacto e dar o primeiro passo para resolver o que precisa. <b>Estamos prontos para o ajudar!</b>
+          </p>
+      </div>
+
+      <!-- Right -->
+      <div class="col-md-6 text-center">
+        <img src="{{ asset('assets/images/tratofeito.jpg') }}" alt="Cliente" class="img-fluid rounded-4 shadow-lg">
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="bg-light py-5">
   <div class="container">
@@ -153,6 +183,8 @@
     </div>
   </div>
 </section>
+
+
 
 @include('partial.simpfooter')
 @endsection

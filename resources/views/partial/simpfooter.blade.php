@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="bg-light text-center py-4 border-top">
-  <p class="card-text text-muted small">2025 -<b>Trato Feito</b> - Encontre os profissionais que precisas!</p>
+  <p class="card-text text-muted small linha">© 2025 tratofeito.pt - Encontre Clientes e Profissionais em Portugal</p>
   <div class="container">
     <div class="mb-3 d-flex justify-content-center gap-3">
       <a href="{{ route('general.politica-cookies') }}" class="text-muted small">Politica de Cookies</a>
