@@ -25,7 +25,7 @@
     <div class="row align-items-center">
       <div class="col-md-6 pe-5">
         <a href="{{ route('welcome') }}">
-          <img src="/assets/images/logo.svg" alt="Logo" class="mb-5" style="width: 200px;">
+          <img src="/assets/images/logo.svg" alt="Logo" class="mb-3" style="width: 200px;">
         </a>
         <h1 class="display-5 fw-bold">
           Encontre Clientes e <br>

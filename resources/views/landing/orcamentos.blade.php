@@ -33,7 +33,7 @@
       <!-- Left: text + Mailchimp form -->
       <div class="col-md-6 pe-5">
         <a href="{{ route('welcome') }}">
-          <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo" class="mb-5" style="width: 200px;">
+          <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo" class="mb-3" style="width: 200px;">
         </a>
 
         <h1 class="display-5 fw-bold">
