@@ -70,7 +70,8 @@
       @vite(['resources/scss/app.scss','resources/js/app.js'])
     @elseif (app()->environment('production') && $hasPlainCss)
       {{-- Fallback: plain compiled CSS if present --}}
-      <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+      <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+
     @else
       {{-- Local/dev: Vite dev server --}}
       @vite(['resources/scss/app.scss','resources/js/app.js'])
