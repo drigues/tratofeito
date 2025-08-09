@@ -60,8 +60,12 @@
     {{-- Page-level styles pushed from child views (e.g., Mailchimp CSS) --}}
     @stack('styles')
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    
+    @if (app()->environment('production'))
+      <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ filemtime(public_path('css/app.css')) }}">
+    @else
+      @vite(['resources/scss/app.scss','resources/js/app.js'])
+    @endif
+
   </head>
   <body class="bg-white text-gray-900 antialiased">
     @yield('content')
