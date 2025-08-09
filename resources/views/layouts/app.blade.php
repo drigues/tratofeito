@@ -60,9 +60,19 @@
     {{-- Page-level styles pushed from child views (e.g., Mailchimp CSS) --}}
     @stack('styles')
 
-    @if (app()->environment('production'))
-      <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ filemtime(public_path('css/app.css')) }}">
+    @php
+      $hasViteBuild = file_exists(public_path('build/manifest.json'));
+      $hasPlainCss  = file_exists(public_path('css/app.css'));
+    @endphp
+
+    @if (app()->environment('production') && $hasViteBuild)
+      {{-- Use Vite-built assets in production --}}
+      @vite(['resources/scss/app.scss','resources/js/app.js'])
+    @elseif (app()->environment('production') && $hasPlainCss)
+      {{-- Fallback: plain compiled CSS if present --}}
+      <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @else
+      {{-- Local/dev: Vite dev server --}}
       @vite(['resources/scss/app.scss','resources/js/app.js'])
     @endif
 
