@@ -9,10 +9,10 @@ export default defineConfig({
     }),
   ],
   css: {
-    devSourcemap: true,         
+    devSourcemap: true,         // nice in dev
   },
   build: {
-    sourcemap: false,           
+    sourcemap: false,           // cleaner in prod
     manifest: true,
     outDir: 'public/build',
     assetsDir: 'assets',

@@ -44,7 +44,18 @@
 
   @stack('styles')
 
-  @vite(['resources/scss/app.scss','resources/js/app.js'])
+  @php
+    $hasViteBuild = file_exists(public_path('build/manifest.json'));
+    $hasPlainCss  = file_exists(public_path('css/app.css'));
+  @endphp
+
+  @if (app()->environment('production') && $hasViteBuild)
+    @vite(['resources/scss/app.scss','resources/js/app.js'])
+  @elseif (app()->environment('production') && $hasPlainCss)
+    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+  @else
+    @vite(['resources/scss/app.scss','resources/js/app.js'])
+  @endif
 </head>
 
 
