@@ -33,7 +33,7 @@
       <!-- Left: text + Mailchimp form -->
       <div class="col-md-6 pe-5 mailchimp">
         <a href="{{ route('welcome') }}">
-          <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo" class="mb-4" style="width: 200px;">
+          <img src="assets/images/logo.svg" alt="Logo" class="mb-4" style="width: 200px;">
         </a>
 
         <h1 class="display-5 fw-bold">
@@ -110,13 +110,13 @@
 
         <div class="d-flex justify-content-between mt-4 text-dark small pe-4 bene">
           <div class="d-flex align-items-center gap-2">
-            <img src="{{ asset('assets/images/verify.png') }}" width="20" alt=""> Acesso a Clientes Verificados
+            <img src="assets/images/verify.png" width="20" alt=""> Acesso a Clientes Verificados
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="{{ asset('assets/images/time.png') }}" width="24" alt=""> Orçamento Rápido
+            <img src="assets/images/time.png" width="24" alt=""> Orçamento Rápido
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="{{ asset('assets/images/support.png') }}" width="22" alt=""> Apoio Exclusivo
+            <img src="assets/images/support.png" width="22" alt=""> Apoio Exclusivo
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@
 
       <!-- Right -->
       <div class="col-md-6 text-center">
-        <img src="{{ asset('assets/images/tratofeito.jpg') }}" alt="Cliente" class="img-fluid rounded-4 shadow-lg">
+        <img src="assets/images/tratofeito.jpg" alt="Cliente" class="img-fluid rounded-4 shadow-lg">
       </div>
 
     </div>
@@ -169,7 +169,7 @@
     <div class="row g-4">
       <div class="col-sm-6 col-md-4">
         <div class="card text-center shadow-sm">
-          <img src="{{ asset('assets/images/img-a.jpg') }}" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
+          <img src="assets/images/img-a.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
           <div class="card-body">
             <h5 class="card-title">Limpeza</h5>
             <p class="card-text text-muted small">Especialista em limpeza residencial</p>
@@ -179,7 +179,7 @@
 
       <div class="col-sm-6 col-md-4">
         <div class="card text-center shadow-sm">
-          <img src="{{ asset('assets/images/img-b.jpg') }}" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
+          <img src="assets/images/img-b.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
           <div class="card-body">
             <h5 class="card-title">Construção e Remodelagem</h5>
             <p class="card-text text-muted small">Especialista em pladur</p>
@@ -189,7 +189,7 @@
 
       <div class="col-sm-6 col-md-4">
         <div class="card text-center shadow-sm">
-          <img src="{{ asset('assets/images/img-c.jpg') }}" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
+          <img src="assets/images/img-c.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
           <div class="card-body">
             <h5 class="card-title">Catering e Serviço de mesa</h5>
             <p class="card-text text-muted small">Especialista em eventos empresarial</p>

@@ -37,15 +37,28 @@
   <meta name="twitter:image" content="https://tratofeito.pt/assets/images/tratofeito.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://tratofeito.pt/assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   @stack('styles')
 
-    @vite(['resources/scss/app.scss','resources/js/app.js'])
+  @php
+    $hasViteBuild = file_exists(public_path('build/manifest.json'));
+    $hasPlainCss  = file_exists(public_path('css/app.css'));
+  @endphp
 
+  @if (app()->environment('production') && $hasViteBuild)
+    @vite(['resources/scss/app.scss','resources/js/app.js'])
+    echo "1"
+  @elseif (app()->environment('production') && $hasPlainCss)
+    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    echo "2"
+  @else
+    @vite(['resources/scss/app.scss','resources/js/app.js'])
+    echo "3"
+  @endif
 </head>
 
 
