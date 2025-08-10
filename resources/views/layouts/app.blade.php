@@ -51,13 +51,10 @@
 
   @if (app()->environment('production') && $hasViteBuild)
     @vite(['resources/scss/app.scss','resources/js/app.js'])
-    echo "1"
   @elseif (app()->environment('production') && $hasPlainCss)
     <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
-    echo "2"
   @else
     @vite(['resources/scss/app.scss','resources/js/app.js'])
-    echo "3"
   @endif
 </head>
 

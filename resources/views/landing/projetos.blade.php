@@ -1,23 +1,46 @@
-@push('styles')
-<link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-<style>
-  #mc_embed_signup{
-    background: transparent;
-    clear: left;
-    font: 14px Helvetica, Arial, sans-serif;
-    max-width: 600px;
-    width: 100%;
-    padding: 0;
-  }
-  #mc_embed_signup h2{ margin-bottom: .75rem; font-weight: 600; font-size: 1.25rem; }
-  #mc_embed_signup .mc-field-group input{ width: 100%; }
-  #mc_embed_signup .button{ display:inline-block; padding:.75rem 1rem; font-weight:600; }
-</style>
-@endpush
-
 @extends('layouts.app')
 
 @section('title', 'Trato Feito')
+
+@push('styles')
+  {{-- Mailchimp embed CSS (loaded in <head>) --}}
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <style>
+    #mc_embed_signup{
+      background: transparent;
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      width: 100%;
+      padding: 0;
+    }
+    #mc_embed_signup h2{ margin-bottom: .75rem; font-weight: 600; font-size: 1.25rem; }
+    #mc_embed_signup .mc-field-group input{ width: 100%; }
+    #mc_embed_signup .indicates-required{ font-size:.85rem; opacity:.75; }
+    #mc_embed_signup .button{ display:inline-block; padding:.75rem 1rem; font-weight:600; }
+    #mc_embed_signup form#mc-embedded-subscribe-form {
+        margin: 0 !important;
+    }
+    #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+        background-color: rgba(255, 255, 255, 0) !important;
+    }
+    #mc_embed_signup .button {
+        background-color:none !important;
+        line-height: 0 !important;
+        margin: 0 !important;
+        padding: 1.3rem !important;
+        width: 100% !important;
+    }
+    #mc-embedded-subscribe.btn-cliente {
+        background-color:rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+    }
+    #mc-embedded-subscribe.btn-pro {
+        background-color:rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important;
+        color: #000;
+    }
+    </style>
+@endpush
+
 
 @section('content')
 <section class="bg-body-secondary text-dark py-5">

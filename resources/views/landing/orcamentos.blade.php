@@ -4,27 +4,43 @@
 
 @push('styles')
   {{-- Mailchimp embed CSS (loaded in <head>) --}}
-  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style>
-    /* Keep Mailchimp box visually consistent with your page */
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <style>
     #mc_embed_signup{
-      background: transparent; /* don’t add white box if your section is tinted */
+      background: transparent; 
       clear: left;
       font: 14px Helvetica, Arial, sans-serif;
-      max-width: 600px; /* same feel as your old form */
+      max-width: 600px; 
       width: 100%;
-      padding: 0; /* let your spacing from Bootstrap handle layout */
+      padding: 0; 
     }
-    /* Make the H2 look like your page headings */
     #mc_embed_signup h2{ margin-bottom: .75rem; font-weight: 600; font-size: 1.25rem; }
-    /* Make inputs full-width, matching Bootstrap feel */
-    #mc_embed_signup .mc-field-group input{ width:100%; }
-    /* Tuck the “indicates required” line away if you don’t want it loud */
+    #mc_embed_signup .mc-field-group input{ width: 100%; }
     #mc_embed_signup .indicates-required{ font-size:.85rem; opacity:.75; }
-    /* Keep the submit button size consistent with your buttons */
     #mc_embed_signup .button{ display:inline-block; padding:.75rem 1rem; font-weight:600; }
-  </style>
+    #mc_embed_signup form#mc-embedded-subscribe-form {
+        margin: 0 !important;
+    }
+    #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+        background-color: rgba(255, 255, 255, 0) !important;
+    }
+    #mc_embed_signup .button {
+        background-color:none !important;
+        line-height: 0 !important;
+        margin: 0 !important;
+        padding: 1.3rem !important;
+        width: 100% !important;
+    }
+    #mc-embedded-subscribe.btn-cliente {
+        background-color:rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+    }
+    #mc-embedded-subscribe.btn-pro {
+        background-color:rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important;
+        color: #000;
+    }
+    </style>
 @endpush
+
 
 @section('content')
 <section class="bg-body-secondary text-dark py-5">
@@ -33,7 +49,7 @@
       <!-- Left: text + Mailchimp form -->
       <div class="col-md-6 pe-5 mailchimp">
         <a href="{{ route('welcome') }}">
-          <img src="assets/images/logo.svg" alt="Logo" class="mb-4" style="width: 200px;">
+          <img src="assets/images/logo.svg" alt="Logo" class="mb-sm-5 mb-4" style="width: 200px;">
         </a>
 
         <h1 class="display-5 fw-bold">
