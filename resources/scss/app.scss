@@ -1,16 +1,19 @@
 @use "bootstrap/scss/bootstrap";
 
+
+
 .landing-split .cliente-bloco{
   background: linear-gradient(to bottom, rgba(13, 110, 253, 0.2), rgba(13, 110, 253, 0.8)),
-              url('/assets/images/img-1.jpg') center center / cover no-repeat;
+              url('https://tratofeito.pt/assets/images/img-2.jpg') center center / cover no-repeat;
   background-position: left;
 }
 
 .landing-split .profissional-bloco{
   background: linear-gradient(to bottom, rgba(255, 193, 9, 0.2), rgba(255, 193, 9, 0.8)),
-              url('/assets/images/img-2.jpg') center center / cover no-repeat;
+              url('https://tratofeito.pt/assets/images/img-1.jpg') center center / cover no-repeat;
   background-position: right;
 }
+
 
 .box-frente{
   border-radius: 6px;
@@ -22,6 +25,14 @@
 .box-frente p {
     margin-bottom: 0 !important;
 }
+
+.service-thumb {
+    height: 220px;        
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    width: 100%;
+  }
 
 @media only screen and (max-width: 900px) {
 

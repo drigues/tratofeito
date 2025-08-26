@@ -52,14 +52,23 @@
           <img src="assets/images/logo.svg" alt="Logo" class="mb-sm-5 mb-4" style="width: 200px;">
         </a>
 
-        <h1 class="display-5 fw-bold">
-          Encontre os profissionais <br>
-          <span class="text-primary">que precisas.</span><br>
-          Junte-te à Trato Feito!
+        <h1 class="fs-4 fw-bold mb-3">
+          A Trato Feito tem uma oferta especial para si!
         </h1>
-
+        <h2 class="fs-5 fw-bold mb-3">
+          Precisas de um profissional para a sua obra, pintura ou pequenas reparações em casa?
+        </h2>
+        <h2 class="fs-5 fw-medium">
+          Encontre aqui, <span class="text-primary fw-semibold">técnicos especializados</span> prontos para te ajudar! E o melhor: <span class="text-primary fw-semibold">sem qualquer custo para si</span>.
+        </h2> 
+        <h2 class="fs-5 fw-medium">
+          É simples, rápido e seguro. Basta deixar o seu contacto e tratamos do resto.
+        </h2>
+        <h2 class="fs-5 fw-bold my-3">
+          Poupe tempo e dores de cabeça.
+        </h2>
         <p class="text-dark mb-4">
-          Conectamos os melhores profissionais de obras e reparações a clientes de confiança em Portugal. É simples, grátis e sem intermediários.
+         A Trato Feito liga-o aos profissionais certos para o serviço que precisas — com rapidez, segurança e sem pagar nada.
         </p>
 
         {{-- Mailchimp: embed placed here (replaces your old <form>) --}}
@@ -126,100 +135,34 @@
 
         <div class="d-flex justify-content-between mt-4 text-dark small pe-4 bene">
           <div class="d-flex align-items-center gap-2">
-            <img src="assets/images/verify.png" width="20" alt=""> Acesso a Clientes Verificados
+            <img src="assets/images/icons/verify.png" width="28" alt=""> Acesso a Clientes Verificados
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="assets/images/time.png" width="24" alt=""> Orçamento Rápido
+            <img src="assets/images/icons/time.png" width="34" alt=""> Orçamento Rápido
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="assets/images/support.png" width="22" alt=""> Apoio Exclusivo
+            <img src="assets/images/icons/support.png" width="32" alt=""> Apoio Exclusivo
           </div>
         </div>
       </div>
 
       <!-- Right image -->
       <div class="col-md-6 text-center">
-        <img src="{{ asset('assets/images/img-1.jpg') }}" alt="Cliente" class="img-fluid rounded-4 shadow-lg">
+        <img src="{{ asset('assets/images/img-2.jpg') }}" alt="Cliente" class="img-fluid rounded-4 shadow-lg lg-mt-6 mt-6">
       </div>
     </div>
   </div>
 </section>
 
 
-<section class="bg-body-light text-dark py-5">
-  <div class="container">
-    <div class="row align-items-center py-4">
-      <!-- Left -->
-      <div class="col-md-6 pe-5 mailchimp">
-          <h2 class="display-7 fw-bold">
-            Afinal, o que é a Trato Feito? 
-          </h2>
-          <p class="text-dark mb-1">
-            Muito prazer, nós somos a <b>Trato Feito</b> — uma plataforma especializada em ligar clientes a profissionais de confiança nas áreas de <b>obras, pinturas, manutenções e serviços gerais</b>.
-          </p>
-          <p class="text-dark mb-1">
-            Nascemos com um propósito claro: <b>resolver o grande problema de encontrar bons profissionais sem stress, sem riscos e sem custos.</b> Já ajudámos dezenas de clientes em Portugal a realizarem pequenas e grandes obras com segurança, qualidade e agilidade.
-          </p>
-          <p class="text-dark mb-1">
-            A nossa missão é <b>simplificar a sua vida</b>, oferecendo-lhe acesso rápido a técnicos qualificados, verificados e prontos para ajudar — seja para um pequeno reparo em casa ou uma obra maior.
-          </p>
-          <p class="text-dark mb-1">
-            Se também quer <b>poupar tempo, evitar dores de cabeça e garantir que o serviço é bem feito</b>, basta clicar no botão abaixo, deixar o seu contacto e dar o primeiro passo para resolver o que precisa. <b>Estamos prontos para o ajudar!</b>
-          </p>
-      </div>
+@include('partial.whynow')
 
-      <!-- Right -->
-      <div class="col-md-6 text-center">
-        <img src="assets/images/tratofeito.jpg" alt="Cliente" class="img-fluid rounded-4 shadow-lg">
-      </div>
+@include('partial.whatistrato')
 
-    </div>
-  </div>
-</section>
-
-
-
-<section class="bg-light py-5">
-  <div class="container">
-    <h2 class="mb-4 fw-bold">Profissionais</h2>
-    <div class="row g-4">
-      <div class="col-sm-6 col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="assets/images/img-a.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Limpeza</h5>
-            <p class="card-text text-muted small">Especialista em limpeza residencial</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="assets/images/img-b.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Construção e Remodelagem</h5>
-            <p class="card-text text-muted small">Especialista em pladur</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="assets/images/img-c.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Catering e Serviço de mesa</h5>
-            <p class="card-text text-muted small">Especialista em eventos empresarial</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
+@include('partial.services')
 
 @include('partial.simpfooter')
+
 @endsection
 
 @push('scripts')

@@ -50,13 +50,13 @@
         <a href="{{ route('welcome') }}">
           <img src="/assets/images/logo.svg" alt="Logo" class="mb-4" style="width: 200px;">
         </a>
-        <h1 class="display-5 fw-bold">
-          Encontre Clientes e <br>
-          <span class="text-warning">Aumente a sua Renda.</span><br>
-          Junte-te à Trato Feito!
+        <h1 class="display-5 fw-bold mb-3">
+          Mais Clientes, <br>
+          <span class="text-warning">Mais Renda </span>
+          — Faça Parte da Trato Feito!
         </h1>
-        <p class="text-dark mb-4">
-          Conectamos os melhores profissionais de obras e reparações a clientes de confiança em Portugal. É simples, grátis e sem intermediários.
+        <p class="text-dark mb-4 fs-5 mb-2">
+         Ligamos profissionais de obras e reparações a clientes de confiança em todo o país. Simples, gratuito e sem intermediários."
         </p>
 
         {{-- Mailchimp embed --}}
@@ -120,96 +120,32 @@
 
         <div class="d-flex justify-content-between mt-4 text-dark small pe-4 bene">
           <div class="d-flex align-items-center gap-2">
-            <img src="/assets/images/verify.png" width="20"> Acesso a Clientes Verificados
+            <img src="/assets/images/icons/verify.png" width="28"> Acesso a Clientes Verificados
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="/assets/images/time.png" width="24"> Orçamento Rápido
+            <img src="/assets/images/icons/time.png" width="34"> Orçamento Rápido
           </div>
           <div class="d-flex align-items-center gap-2">
-            <img src="/assets/images/support.png" width="22"> Apoio Exclusivo
+            <img src="/assets/images/icons/support.png" width="32"> Apoio Exclusivo
           </div>
         </div>
       </div>
 
       <div class="col-md-6 text-center">
-        <img src="/assets/images/img-2.jpg" alt="Profissional" class="img-fluid rounded-4 shadow-lg">
+        <img src="/assets/images/img-1.jpg" alt="Profissional" class="img-fluid rounded-4 shadow-lg">
       </div>
     </div>
   </div>
 </section>
 
-<section class="bg-body-light text-dark py-5">
-  <div class="container">
-    <div class="row align-items-center py-4">
-      <!-- Left -->
-      <div class="col-md-6 pe-5 mailchimp">
-          <h2 class="display-7 fw-bold">
-            Afinal, o que é a Trato Feito? 
-          </h2>
-          <p class="text-dark mb-1">
-            Muito prazer, nós somos a <b>Trato Feito</b> — uma plataforma especializada em ligar clientes a profissionais de confiança nas áreas de <b>obras, pinturas, manutenções e serviços gerais</b>.
-          </p>
-          <p class="text-dark mb-1">
-            Nascemos com um propósito claro: <b>resolver o grande problema de encontrar bons profissionais sem stress, sem riscos e sem custos.</b> Já ajudámos dezenas de clientes em Portugal a realizarem pequenas e grandes obras com segurança, qualidade e agilidade.
-          </p>
-          <p class="text-dark mb-1">
-            A nossa missão é <b>simplificar a sua vida</b>, oferecendo-lhe acesso rápido a técnicos qualificados, verificados e prontos para ajudar — seja para um pequeno reparo em casa ou uma obra maior.
-          </p>
-          <p class="text-dark mb-1">
-            Se também quer <b>poupar tempo, evitar dores de cabeça e garantir que o serviço é bem feito</b>, basta clicar no botão abaixo, deixar o seu contacto e dar o primeiro passo para resolver o que precisa. <b>Estamos prontos para o ajudar!</b>
-          </p>
-      </div>
+@include('partial.whynow')
 
-      <!-- Right -->
-      <div class="col-md-6 text-center">
-        <img src="{{ asset('assets/images/tratofeito.jpg') }}" alt="Cliente" class="img-fluid rounded-4 shadow-lg">
-      </div>
+@include('partial.whatistrato')
 
-    </div>
-  </div>
-</section>
-
-<section class="bg-light py-5">
-  <div class="container">
-    <h2 class="mb-4 fw-bold">Profissionais</h2>
-    <div class="row g-4">
-      <div class="col-sm-6 col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="{{ asset('assets/images/img-a.jpg') }}" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Limpeza</h5>
-            <p class="card-text text-muted small">Especialista em limpeza residencial</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="{{ asset('assets/images/img-b.jpg') }}" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Construção e Remodelagem</h5>
-            <p class="card-text text-muted small">Especialista em pladur</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="{{ asset('assets/images/img-c.jpg') }}" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Catering e Serviço de mesa</h5>
-            <p class="card-text text-muted small">Especialista em eventos empresarial</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
+@include('partial.services')
 
 @include('partial.simpfooter')
+
 @endsection
 
 @push('scripts')
